@@ -5,7 +5,7 @@ Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If 
 
 To install Selenium, run: `pip install selenium` or follow the instructions [here](http://goo.gl/JmxrPT)
 
-##Make sure to modify your .txt file locationa nd download directory in the file
+##Make sure to modify your .txt file location and download directory in the file
 
 ##The script will not work correctly if it is not pointed to the correct .txt file and a valid download location
 
