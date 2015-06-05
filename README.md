@@ -3,10 +3,10 @@ Python script using Selenium &amp; IFTTT to download a track and its album art w
 
 Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If a new track is liked, the track's title and URL will be appended to the end of the file.
 
-MAKE SURE TO MODIFY YOUR FILE LOCATION AND DOWNLOAD DIRECTORY IN THE FILE!!
+To install Selenium, run: `pip install selenium` or follow the instructions [here](http://goo.gl/JmxrPT)
 
-THE SCRIPT WILL NOT WORK CORRECTLY IF IT IS NOT POINTED TO THE CORRECT .txt FILE AND A VALID DOWNLOAD LOCATION!!
+##Make sure to modify your .txt file locationa nd download directory in the file
 
-To install Selenium, run: `pip install selenium`
+##The script will not work correctly if it is not pointed to the correct .txt file and a valid download location
 
-or follow the instructions [here](http://goo.gl/JmxrPT)
+
