@@ -57,7 +57,7 @@ import urllib
 import time
 import os.path as path
 
-favoritesPath = '/Users/jeremy/Box Sync/IFTTT/SoundCloud/favorites.txt'
+favoritesPath = 'FILE_LOCATION_HERE'
 #open file in read mode
 favoritesFile = open(favoritesPath, 'r+w')
 
