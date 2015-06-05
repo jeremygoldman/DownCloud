@@ -33,11 +33,16 @@ def getTrack():
 	albumArtSrc = albumArt.get_attribute('src')
 	#download album art
 	#use str() to make sure punctuation doesn't mess with directory
-	urllib.urlretrieve(albumArtSrc, 'Downloads/'+str((allLines[-1].strip()))+'.jpg')
+	urllib.urlretrieve(albumArtSrc, 'DOWNLOAD_LOCATION_HERE'+str((allLines[-1].strip()))+'.jpg')
 	print "downloaded album art"
 	print "downloading audio"
 	driver.get(audioURL)
+	print "sleeping for 15 sec to make sure download is completed..."
+	#MODIFY THE SLEEP TIME ACCORDING TO YOUR INTERNET CONNECTION
+	#i.e. sleep less if your file downloads quickly, sleep longer if internet connection is slower
+	#time is in seconds
 	time.sleep(15)
+	print "done sleeping"
 	driver.quit()
 
 def updateTime():
@@ -57,36 +62,46 @@ import urllib
 import time
 import os.path as path
 
-favoritesPath = 'FILE_LOCATION_HERE'
-#open file in read mode
+favoritesPath = 'BOX_FILE_LOCATION_HERE'
+#open file in read/write mode
 favoritesFile = open(favoritesPath, 'r+w')
 
 #get all text from file
 allLines = favoritesFile.readlines()
 print "reading file for changes"
-#last modification time
+#
+#get timestamp line to check if first time or not
+prevModTimeString = (allLines[1].strip())[:7]
+if prevModTimeString.isdigit():
+	#sript has been run before or timestamp has been added
+	#last modification time
+	prevModTime = int(float(allLines[1]))
+	print "previous file mod time: " + str(prevModTime)
+	#current modification (will be much larger if file was modified)
+	currModTime = path.getmtime(favoritesPath)
+	print "current mod time: " + str(currModTime)
 
-prevModTime = int(float(allLines[1]))
-print "previous file mod time: " + str(prevModTime)
-#current modification (will be much larger if file was modified)
-currModTime = path.getmtime(favoritesPath)
-print "current mod time: " + str(currModTime)
-
-#3600 = hour
-#difference in modification times
-timeChange = currModTime-prevModTime
-print "change in mod times: " + str(timeChange)
-#more than 1 min
-if timeChange > 100:
-	#download track + album art
-	print "running getTrack()"
-	getTrack()
-	#update last modified time
-	print "running updateTime()"
-	updateTime()
+	#3600 = hour
+	#difference in modification times
+	timeChange = currModTime-prevModTime
+	print "change in mod times: " + str(timeChange)
+	#more than 1 min
+	if timeChange > 100:
+		#download track + album art
+		print "running getTrack()"
+		getTrack()
+		#update last modified time
+		print "running updateTime()"
+		updateTime()
+	else:
+		print "nothing's changed yet"
+	print "all done!"
 else:
-	print "nothing's changed yet"
-print "all done!"
+	#first time running script
+	print "first time running script!"
+	getTrack()
+	updateTime()
+
 
 
 
