@@ -1,7 +1,10 @@
+#soundcloud_like_dl.py
+#author: Jeremy Goldman
+
 def getTrack():
 	finalURL = "http://anything2mp3.com/?url=" + allLines[-2].strip()
-	print "opening chrome"
-	driver = webdriver.Chrome()
+	print "opening firefox"
+	driver = webdriver.Firefox()
 	#navigate to url
 	print "navigating to webpage"
 	driver.get(finalURL)
@@ -46,7 +49,6 @@ def getTrack():
 	driver.quit()
 
 def updateTime():
-	#60 is one second
 	dataList = [str(time.time()) + '\n'] + allLines[2:]
 	newData = '\n' + "".join(dataList)
 	#write time into new file
@@ -61,7 +63,7 @@ from selenium.webdriver.common.keys import Keys
 import urllib
 import time
 import os.path as path
-
+#modify below line to point to .txt file created by Box
 favoritesPath = 'BOX_FILE_LOCATION_HERE'
 #open file in read/write mode
 favoritesFile = open(favoritesPath, 'r+w')
@@ -85,8 +87,9 @@ if prevModTimeString.isdigit():
 	#difference in modification times
 	timeChange = currModTime-prevModTime
 	print "change in mod times: " + str(timeChange)
-	#more than 1 min
-	if timeChange > 100:
+	#if file was changed more than 1 min after the last time the script was run
+	#(i.e. IFTTT recipe updated the file)
+	if timeChange > 60:
 		#download track + album art
 		print "running getTrack()"
 		getTrack()
