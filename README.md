@@ -23,3 +23,5 @@ Now, you're monitoring the IFTTT file for changes! If the file is modified, the 
 **Confused about the fswatch install? Check the "Getting fswatch section" of [this GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
 
 _All credit for fswatch should go to [Enrico Maria Crisostomo](https://github.com/emcrisostomo) and his awesome monitoring utility._
+
+_All credit for Selenium should go to the Selenium team at (SeleniumHQ)[http://www.seleniumhq.org/] for their great web browser automation tools, although I am definitely not using the tools for their intended purpose (web testing)_
