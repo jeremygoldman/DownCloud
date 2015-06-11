@@ -7,6 +7,7 @@ def getTrack():
 	driver = webdriver.Firefox()
 	#navigate to url
 	print "navigating to webpage"
+	print "\n sorry about the ads on the site. it's not the prettiest, but it gets the job done\n"
 	driver.get(finalURL)
 	#time.sleep(3)
 	#find convert button and click it
@@ -36,11 +37,12 @@ def getTrack():
 	albumArtSrc = albumArt.get_attribute('src')
 	#download album art
 	#use str() to make sure punctuation doesn't mess with directory
-	urllib.urlretrieve(albumArtSrc, 'DOWNLOAD_LOCATION_HERE'+str((allLines[-1].strip()))+'.jpg')
+	urllib.urlretrieve(albumArtSrc, 'Downloads/'+str((allLines[-1].strip()))+'.jpg')
 	print "downloaded album art"
 	print "downloading audio"
 	driver.get(audioURL)
-	print "sleeping for 15 sec to make sure download is completed..."
+	print "\nmake sure you select \"Save File\", then click the \"OK\" button if a dialog pops up!!!"
+	print "\nsleeping for 15 sec to make sure download is completed..."
 	#MODIFY THE SLEEP TIME ACCORDING TO YOUR INTERNET CONNECTION
 	#i.e. sleep less if your file downloads quickly, sleep longer if internet connection is slower
 	#time is in seconds
@@ -58,20 +60,41 @@ def updateTime():
 	print "saving file"
 	favoritesFile.close()
 
+def getFilePath():
+	#check if filepath is already saved
+	if path.isfile('fileLocation.txt'):
+		#read from file
+		nameFile = open('fileLocation.txt', 'r')
+		favoritesPath = nameFile.read().strip()
+		nameFile.close()
+	else:
+		#accept input for the file location
+		favoritesPath = raw_input('\nTo point the script at the IFTTT-modified file, please drag your file into this terminal window, then press Enter.\n')
+		favoritesPath = favoritesPath.strip()
+		#get rid of any spaces
+		#create new file to save file location
+		newNameFile = open('fileLocation.txt', 'w')
+		newNameFile.write(favoritesPath)
+		newNameFile.close()
+	#get rid of spaces in filename
+	favoritesPath = favoritesPath.replace('\\', '')
+	return favoritesPath
+
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import urllib
 import time
 import os.path as path
-#modify below line to point to .txt file created by Box
-favoritesPath = 'BOX_FILE_LOCATION_HERE'
+
+favoritesPath = getFilePath()
+
 #open file in read/write mode
 favoritesFile = open(favoritesPath, 'r+w')
 
 #get all text from file
 allLines = favoritesFile.readlines()
 print "reading file for changes"
-#
 #get timestamp line to check if first time or not
 prevModTimeString = (allLines[1].strip())[:7]
 if prevModTimeString.isdigit():
@@ -87,14 +110,12 @@ if prevModTimeString.isdigit():
 	#difference in modification times
 	timeChange = currModTime-prevModTime
 	print "change in mod times: " + str(timeChange)
-	#if file was changed more than 1 min after the last time the script was run
+	#if file was changed more than 30 sec after the last time the script was run
 	#(i.e. IFTTT recipe updated the file)
-	if timeChange > 60:
+	if timeChange > 30:
 		#download track + album art
-		print "running getTrack()"
 		getTrack()
 		#update last modified time
-		print "running updateTime()"
 		updateTime()
 	else:
 		print "nothing's changed yet"
