@@ -30,4 +30,4 @@ _All credit for Python should go to Guido van Rossum, for creating the language_
 
 _All credit for computers should go to the 1946 ENIAC team for creating the first computer_
 
-_All other credit should go to my parents, Josh and Judy, for creating the developer_
+_All other credit should go to my parents for creating the developer_
