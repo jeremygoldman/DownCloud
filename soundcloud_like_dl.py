@@ -37,7 +37,7 @@ def getTrack():
 	albumArtSrc = albumArt.get_attribute('src')
 	#download album art
 	#use str() to make sure punctuation doesn't mess with directory
-	urllib.urlretrieve(albumArtSrc, 'Downloads/'+str((allLines[-1].strip()))+'.jpg')
+	urllib.urlretrieve(albumArtSrc, str((allLines[-1].strip()))+'.jpg')
 	print "downloaded album art"
 	print "downloading audio"
 	driver.get(audioURL)
