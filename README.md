@@ -12,7 +12,7 @@ To install fswatch:
   * first run `brew install fswatch` if you've installed Homebrew. If you haven't, you definitely should.
   * Once fswatch has installed, run:
   
-  `fswatch -o [PATH OF IFTTT FAVORITES.TXT FILE] | xargs -n1 -I{} [PATH OF soundcloud_like_dl.py]`
+  `fswatch -o [PATH OF IFTTT FAVORITES.TXT FILE] | xargs -n1 -I{} [PATH OF downcloud.py]`
 
   (don't include the brackets around the filepath placeholders)
 
