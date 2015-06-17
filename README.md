@@ -1,4 +1,4 @@
-# Soundcloud-Like-DL
+# DownCloud
 
 Python script using Selenium, fswatch, &amp; IFTTT to download a track and its album art whenever I like a new track on SoundCloud
 
