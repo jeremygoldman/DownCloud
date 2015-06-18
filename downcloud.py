@@ -1,9 +1,9 @@
-#soundcloud_like_dl.py
+#downcloud.py
 #author: Jeremy Goldman
 
 def getTrack():
 	finalURL = "http://anything2mp3.com/?url=" + allLines[-2].strip()
-	print "opening firefox"
+	print "opening Firefox"
 	driver = webdriver.Firefox()
 	#navigate to url
 	print "navigating to webpage"
