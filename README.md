@@ -2,9 +2,9 @@
 
 Python script using Selenium, fswatch, &amp; IFTTT to download a track and its album art whenever I like a new track on SoundCloud
 
-**Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If a new track is liked on SoundCloud, the IFTTT will append the track's title and URL to the end of the file. The script running on your local**
+Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If a new track is liked on SoundCloud, the IFTTT will append the track's title and URL to the end of the file. The script running on your local**
 
-Files will be downloaded in whichever directory you ran the script from!
+#### Files will be downloaded in whichever directory you ran the script from!
 ------
 ## Installation
 
