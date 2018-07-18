@@ -22,13 +22,13 @@ If you're having issues installing fswatch, check out the [GitHub repository's](
 
 ------
 
-If everything is installed correctly, your IFTTT trigger is watching for new liked tracks on SoundCloud, while the Python script is monitoring any changes to the favorites.txt file. Every time the IFTTT recipe adds new track data to the file, the script will use this data to download the mp3 file and apply the relevant metadata.
+At this point if everything is installed correctly, your IFTTT trigger is watching for new liked tracks on SoundCloud, while the Python script is monitoring any changes to the favorites.txt file. Every time the IFTTT recipe adds new track data to the file, the script will use this data to download the mp3 file and apply the relevant metadata.
 
 *When the script first runs, nothing will be outputted and it may look like Terminal is frozen. This is not the case; The script is running fine, and the script will only output when the favorites.txt file is modified.*
 
-**Make sure you click "Save File" to download the MP3 if a dialog pops up on the browser!**
---------
+#### Make sure you click "Save File" to download the MP3 if a dialog pops up on the browser!
 
-### Acknowledgements
+--------
+## Acknowledgements
 - fswatch: [Enrico Maria Crisostomo](https://github.com/emcrisostomo)
 - Selenium: [SeleniumHQ](http://www.seleniumhq.org/) 
