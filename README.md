@@ -2,34 +2,33 @@
 
 Python script using Selenium, fswatch, &amp; IFTTT to download a track and its album art whenever I like a new track on SoundCloud
 
-**Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If a new track is liked, the track's title and URL will be appended to the end of the file.**
+**Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If a new track is liked on SoundCloud, the IFTTT will append the track's title and URL to the end of the file. The script running on your local**
 
 Files will be downloaded in whichever directory you ran the script from!
 ------
-To install Selenium, run: `pip install selenium` or follow the instructions [here](http://goo.gl/JmxrPT)
+## Installation
 
-To install fswatch:
-  * first run `brew install fswatch` if you've installed Homebrew. If you haven't, you definitely should.
-  * Once fswatch has installed, run:
+* Install Selenium using the following command: `pip install selenium`
+* Install fswatch using the following command: `brew install fswatch`.
+ * If you don't have Homebrew installed, follow the instructions [here](https://brew.sh/)
+* Run the following command:
   
   `fswatch -o [PATH OF IFTTT FAVORITES.TXT FILE] | xargs -n1 -I{} [PATH OF downcloud.py]`
 
   (don't include the brackets around the filepath placeholders)
 
-<br>
+
 If you're having issues installing fswatch, check out the [GitHub repository's](https://github.com/emcrisostomo/fswatch) README.
 
+------
 
-At this point IFTTT is continuously monitoring the file for changes! The soundcloud_like_dl.py script will run every time the file is modified.
+If everything is installed correctly, your IFTTT trigger is watching for new liked tracks on SoundCloud, while the Python script is monitoring any changes to the favorites.txt file. Every time the IFTTT recipe adds new track data to the file, the script will use this data to download the mp3 file and apply the relevant metadata.
 
-*When the script first runs, nothing will be outputted and it will look like Terminal is frozen. This is not the case; The script is running fine, and something will be outputted only when the monitored file is modified.*
+*When the script first runs, nothing will be outputted and it may look like Terminal is frozen. This is not the case; The script is running fine, and the script will only output when the favorites.txt file is modified.*
 
 **Make sure you click "Save File" to download the MP3 if a dialog pops up on the browser!**
 --------
 
-**Confused about the fswatch install? Check the "Getting fswatch section" of [the GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
-
---------
 ### Acknowledgements
 - fswatch: [Enrico Maria Crisostomo](https://github.com/emcrisostomo)
 - Selenium: [SeleniumHQ](http://www.seleniumhq.org/) 
