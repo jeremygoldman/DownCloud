@@ -16,6 +16,9 @@ To install fswatch:
 
   (don't include the brackets around the filepath placeholders)
 
+(If you are having issues installing fswatch, check out the [GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
+
+
 Now, you're monitoring the IFTTT file for changes! If the file is modified, the soundcloud_like_dl.py script will run!
 
 *When the script first runs, nothing will be outputted and it will look like Terminal is frozen. This is not the case; The script is running fine, and something will be outputted only when the monitored file is modified.*
@@ -25,6 +28,7 @@ Now, you're monitoring the IFTTT file for changes! If the file is modified, the 
 
 **Confused about the fswatch install? Check the "Getting fswatch section" of [the GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
 
+--------
 ### Acknowledgements
 - fswatch: [Enrico Maria Crisostomo](https://github.com/emcrisostomo)
 - Selenium: [SeleniumHQ](http://www.seleniumhq.org/) 
