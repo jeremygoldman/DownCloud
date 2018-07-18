@@ -25,12 +25,6 @@ Now, you're monitoring the IFTTT file for changes! If the file is modified, the 
 
 **Confused about the fswatch install? Check the "Getting fswatch section" of [this GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
 
-_All credit for fswatch should go to [Enrico Maria Crisostomo](https://github.com/emcrisostomo) and his awesome monitoring utility._
-
-_All credit for Selenium should go to the team at [SeleniumHQ](http://www.seleniumhq.org/) for their great web browser automation tools, although I am definitely not using the tools for their intended purpose (web testing)_
-
-_All credit for Python should go to Guido van Rossum, for creating the language_
-
-_All credit for computers should go to the 1946 ENIAC team for creating the first computer_
-
-_All other credit should go to my parents for creating the developer_
+Acknowledgements
+- fswatch: [Enrico Maria Crisostomo](https://github.com/emcrisostomo)
+- Selenium: [SeleniumHQ](http://www.seleniumhq.org/) 
