@@ -23,7 +23,7 @@ Now, you're monitoring the IFTTT file for changes! If the file is modified, the 
 **Make sure you click "Save File" to download the MP3 if a dialog pops up on the browser!**
 --------
 
-**Confused about the fswatch install? Check the "Getting fswatch section" of [this GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
+**Confused about the fswatch install? Check the "Getting fswatch section" of [the GitHub repository's](https://github.com/emcrisostomo/fswatch) README.**
 
 Acknowledgements
 - fswatch: [Enrico Maria Crisostomo](https://github.com/emcrisostomo)
