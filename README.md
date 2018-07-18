@@ -4,8 +4,8 @@ Python script using Selenium, fswatch, &amp; IFTTT to download a track and its a
 
 Uses [this IFTTT recipe](https://goo.gl/556rKd) to monitor SoundCloud likes. If a new track is liked on SoundCloud, the IFTTT will append the track's title and URL to the end of the file. The script running on your local**
 
-#### Files will be downloaded in whichever directory you ran the script from!
-------
+**Files will be downloaded in whichever directory you ran the script from!**
+
 ## Installation
 
 * Install Selenium using the following command: `pip install selenium`
@@ -24,9 +24,9 @@ At this point if everything is installed correctly, your IFTTT trigger is watchi
 
 *When the script first runs, nothing will be outputted and it may look like Terminal is frozen. This is not the case; The script is running fine, and the script will only output when the favorites.txt file is modified.*
 
-#### Make sure you click "Save File" to download the MP3 if a dialog pops up on the browser!
+**Make sure you click "Save File" to download the MP3 if a dialog pops up on the browser!**
 
---------
+
 ## Acknowledgements
 - fswatch: [Enrico Maria Crisostomo](https://github.com/emcrisostomo)
 - Selenium: [SeleniumHQ](http://www.seleniumhq.org/) 
