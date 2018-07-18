@@ -20,7 +20,6 @@ Files will be downloaded in whichever directory you ran the script from!
 
 If you're having issues installing fswatch, check out the [GitHub repository's](https://github.com/emcrisostomo/fswatch) README.
 
-------
 
 At this point if everything is installed correctly, your IFTTT trigger is watching for new liked tracks on SoundCloud, while the Python script is monitoring any changes to the favorites.txt file. Every time the IFTTT recipe adds new track data to the file, the script will use this data to download the mp3 file and apply the relevant metadata.
 
